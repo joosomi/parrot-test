@@ -1,13 +1,11 @@
 import os
 
-from dotenv import load_dotenv
 from openai import OpenAI
 
-# 환경 변수 로드
-load_dotenv()
+from app.utils.env_loader import load_env  # 유틸리티 함수 임포트
 
 # OpenAI 클라이언트 초기화
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=load_env())  # 환경 변수 로드를 유틸리티 함수로 처리
 
 
 def generate_response(prompt: str) -> dict:
