@@ -33,18 +33,32 @@ OpenAI GPT 모델을 활용하여 사용자 프롬프트를 처리하고 응답�
 
 5. Swagger 문서 확인
 FastAPI가 제공하는 Swagger UI를 통해 API 문서를 확인하고 테스트할 수 있습니다. <br>
-[Swagger UI]: http://127.0.0.1:8000/docs
+[[Swagger UI](http://127.0.0.1:8000/docs)]: http://127.0.0.1:8000/docs
 
 
 ## 🚀 주요 기능
 
 ### 1. 현재 구현된 기능
-#### 프롬프트 기반 응답 생성
-- `POST /generate/`  
-  사용자가 입력한 텍스트를 OpenAI GPT 모델에 전달하여 응답을 생성합니다.
+#### 프롬프트 기반 응답 생성 
+**`POST /generate`** : 사용자가 입력한 텍스트를 OpenAI GPT 모델에 전달하여 응답을 생성합니다.
+  <br>
+  - Request Body (JSON)
+  ```json
+  {
+    "prompt": "안녕!"
+  }
+  ```
+  - Response Body (JSON)
+  ```
+  {
+    "prompt": "안녕!",
+    "response": "안녕하세요! 도와드릴게 있나요? 😊"
+  }
+  ```
 
-#### 예시 요청
-<img width="1137" alt="image" src="https://github.com/user-attachments/assets/adfb1221-ad2e-42de-9865-c40200bffc09">
+![image](https://github.com/user-attachments/assets/8080f654-38c2-4784-9d48-888642c43526)
+
+
 
 ## 🛠️ 개발 계획
 - 다양한 모델 테스트
